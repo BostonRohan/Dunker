@@ -1,0 +1,31 @@
+footer {
+  position: fixed;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  color: var(--text-color-primary);
+  cursor: pointer;
+}
+footer section {
+  display: flex;
+  gap: 1rem;
+}
+footer p {
+  padding-left: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  display: inline-block;
+  animation: animate 25s linear infinite;
+  margin: 0;
+}
+footer h3 {
+  margin: 0;
+}
+footer section i {
+  color: var(--twitter-color);
+}
+@keyframes animate {
+  100% {
+    transform: translate(-100%, 0);
+  }
+}

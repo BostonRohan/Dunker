@@ -1,0 +1,85 @@
+.Players {
+  color: white;
+}
+.Players input[type="text"] {
+  padding: 0.5em;
+  margin: 1em;
+  border-radius: 0.5em;
+}
+.Players input[type="submit"] {
+  padding: 1em 2em;
+  margin: 1em;
+  border-radius: 0.5em;
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  color: var(--text-color-primary);
+  cursor: pointer;
+}
+.Players .container {
+  margin: 0 auto;
+  max-width: 95%;
+  padding: 1em;
+}
+.Players .container p {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.171);
+  float: right;
+}
+.Players .select {
+  width: 95%;
+  padding: 1em;
+  margin: 0 auto;
+}
+.Players .select thead tr td {
+  text-align: right;
+  padding: 0.5em;
+  font-size: 1.3rem;
+}
+.Players .select img {
+  max-width: 50%;
+  float: left;
+}
+.Players .select tbody td {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.171);
+  padding: 5em;
+  text-align: right;
+  cursor: pointer;
+}
+.Players .compare {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5em;
+}
+.Players .player {
+  max-width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.Players .player img {
+  max-width: 100%;
+}
+.Players .player h1 {
+  text-align: center;
+  margin: 0.5rem;
+}
+
+@media screen and (max-width: 37.5em) {
+  .Players .container p {
+    float: none;
+    font-size: 0.75rem;
+    padding: 0.25em;
+  }
+  .Players .compare {
+    display: block;
+  }
+  .Players .player {
+    margin: 0 auto;
+  }
+  .Players .player h1 {
+    text-align: center;
+  }
+}

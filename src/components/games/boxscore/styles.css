@@ -1,0 +1,37 @@
+.boxscore {
+  height: 100%;
+  min-width: 95%;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+.boxscore .row {
+  display: flex;
+}
+.boxscore h1 {
+  margin: 1rem;
+  text-align: center;
+  font-size: 2rem;
+}
+/*Table styles */
+.boxscore table {
+  width: 100%;
+  padding-left: 1em;
+}
+.boxscore tr {
+  border: 1px solid white;
+}
+.boxscore th,
+td {
+  padding: 0.25em;
+  text-align: center;
+}
+.boxscore td span {
+  padding: 0.25em;
+  opacity: 0.7;
+}
+.boxscore table img {
+  width: 30%;
+}
+.boxscore table thead h1 {
+  font-size: 2rem;
+}

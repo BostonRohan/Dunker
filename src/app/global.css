@@ -1,0 +1,40 @@
+:root {
+  --color-primary: #121212;
+  --color-accent: #444444;
+  --card-color: #181818;
+  --text-color-primary: #ebebeb;
+  --text-color-accent: #da0037;
+  --discord-color: #7289da;
+  --twitter-color: #00acee;
+  --font-landing: "Teko", sans-serif;
+  --font-large: "Montserrat," sans-serif;
+  --font-normal: "Work Sans", sans-serif;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--color-primary);
+  overflow-x: hidden;
+}
+p,
+td {
+  line-height: 1.7;
+  font-family: var(--font-normal);
+}
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+  font-family: var(--font-large);
+}
+.container {
+  background-color: var(--card-color);
+  border-radius: 1em;
+}
