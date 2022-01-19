@@ -1,7 +1,7 @@
 import Landing from "./landing/landing";
 import About from "./about/about";
 import Games from "./games/games";
-import News from "../news/news";
+import News from "./news/news";
 
 function Home({ allPlayers, width, id }) {
   return (

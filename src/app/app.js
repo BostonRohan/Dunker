@@ -5,7 +5,7 @@ import Home from "../components/home/home";
 import Nav from "../components/nav/nav";
 import Players from "../components/players/players";
 import Quizzes from "../components/quizzes/quizzes";
-import Footer from "../components/news/footer/footer";
+import Footer from "../components/footer/footer";
 import "./global.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 
