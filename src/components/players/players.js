@@ -59,23 +59,12 @@ function Players({ allPlayers, width }) {
           ? setFirstPlayer(newState)
           : setSecondPlayer(newState);
       });
+    //Reset search results
+    setResult([]);
   };
   return (
     <section className="Players">
       <div className="container">
-        <div className="compare">
-          <div
-            className="player"
-            onClick={() => {
-              handleClick("first");
-            }}
-          >
-            <Player player={firstPlayer} />
-          </div>
-          <div className="player" onClick={handleClick}>
-            <Player player={secondPlayer} />
-          </div>
-        </div>
         <section>
           <p>*Historic players or seasons currently not supported</p>
           <input
@@ -117,6 +106,19 @@ function Players({ allPlayers, width }) {
             </tbody>
           </table>
         </section>
+        <div className="compare">
+          <div
+            className="player"
+            onClick={() => {
+              handleClick("first");
+            }}
+          >
+            <Player player={firstPlayer} />
+          </div>
+          <div className="player" onClick={handleClick}>
+            <Player player={secondPlayer} />
+          </div>
+        </div>
       </div>
     </section>
   );
