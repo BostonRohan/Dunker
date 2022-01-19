@@ -11,10 +11,7 @@
   min-height: 20em;
   flex: 33.33%;
   max-width: 95%;
-}
-.Games .container:hover {
   cursor: pointer;
-  transform: scale(1.1);
 }
 .Games .container .content {
   max-width: 85%;

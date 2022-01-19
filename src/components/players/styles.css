@@ -1,5 +1,5 @@
 .Players {
-  color: white;
+  color: var(--text-color-primary);
 }
 .Players input[type="text"] {
   padding: 0.5em;
@@ -19,6 +19,7 @@
   margin: 0 auto;
   max-width: 95%;
   padding: 1em;
+  padding-top: 4.5rem;
 }
 .Players .container p {
   font-size: 1rem;
