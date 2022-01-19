@@ -10,7 +10,8 @@
   padding-right: 1em;
   gap: 1em;
   color: var(--text-color-primary);
-  font-size: 1.25rem;
+  font-family: var(--font-primary);
+  font-size: 1.5rem;
 }
 .nav li {
   cursor: pointer;

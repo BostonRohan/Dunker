@@ -7,8 +7,7 @@
   --discord-color: #7289da;
   --twitter-color: #00acee;
   --font-landing: "Teko", sans-serif;
-  --font-large: "Montserrat," sans-serif;
-  --font-normal: "Work Sans", sans-serif;
+  --font-primary: "Work Sans", sans-serif;
 }
 *,
 *::before,
@@ -25,14 +24,14 @@ body {
 p,
 td {
   line-height: 1.7;
-  font-family: var(--font-normal);
+  font-family: var(--font-primary);
 }
 h1,
 h2,
 h3,
 h4 {
   margin: 0;
-  font-family: var(--font-large);
+  font-family: var(--font-primary);
 }
 .container {
   background-color: var(--card-color);
