@@ -1,4 +1,4 @@
-import { getPlayerID } from "../../../../app/getPlayerId";
+import { getPlayerID } from "../../../../../app/getPlayerId";
 import "./styles.css";
 
 function LeadingPlayer({ index, players, allPlayers, width }) {

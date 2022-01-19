@@ -1,4 +1,4 @@
-import { getPlayerID } from "../../../app/getPlayerId";
+import { getPlayerID } from "../../../../app/getPlayerId";
 function Table({ data, width, team, score, allPlayers }) {
   const type = [
     "PLAYER",

@@ -1,11 +1,9 @@
 import { useState, useEffect } from "react";
+import { Routes, Route, BrowserRouter } from "react-router-dom";
 import axios from "axios";
+import Home from "../components/home/home";
 import Nav from "../components/nav/nav";
-import Landing from "../components/landing/landing";
-import About from "../components/about/about";
-import Games from "../components/games/games";
 import Players from "../components/players/players";
-import News from "../components/news/news";
 import Quizzes from "../components/quizzes/quizzes";
 import Footer from "../components/news/footer/footer";
 import "./global.css";
@@ -57,16 +55,23 @@ function App() {
     setWidth(window.innerWidth);
   };
   return (
-    <main>
+    <BrowserRouter>
       <Nav width={width} />
-      <Landing />
-      <About width={width} />
-      <Games width={width} allPlayers={allPlayers} />
-      <Players width={width} allPlayers={allPlayers} />
-      <News id={recentTweet.id} />
-      <Quizzes />
       <Footer tweet={recentTweet.text} />
-    </main>
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <Home width={width} allPlayers={allPlayers} id={recentTweet.id} />
+          }
+        />
+        <Route
+          path="/players"
+          element={<Players width={width} allPlayers={allPlayers} />}
+        />
+        <Route path="/quizzes" element={<Quizzes />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
