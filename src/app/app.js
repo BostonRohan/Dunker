@@ -8,6 +8,7 @@ import Quizzes from "../components/quizzes/quizzes";
 import Footer from "../components/footer/footer";
 import "./global.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
+import Signup from "../components/quizzes/signup/signup";
 
 function App() {
   const [width, setWidth] = useState(window.innerWidth);
@@ -70,6 +71,7 @@ function App() {
           element={<Players width={width} allPlayers={allPlayers} />}
         />
         <Route path="/quizzes" element={<Quizzes />} />
+        <Route path="/quizzes/signup" element={<Signup />} />
       </Routes>
     </BrowserRouter>
   );
