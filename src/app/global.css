@@ -42,14 +42,18 @@ input[type="password"],
 input[type="text"] {
   padding: 0.5rem 2rem;
   display: block;
-  margin: 3rem;
+  margin: 3rem auto;
 }
 input[type="submit"] {
   padding: 1em 2em;
-  margin: 1em;
+  margin: 1em auto;
   border-radius: 0.5em;
   background-color: var(--color-primary);
   border-color: var(--color-primary);
   color: var(--text-color-primary);
   cursor: pointer;
+}
+.errorMsg {
+  color: rgb(223, 145, 145);
+  padding: 0.5rem;
 }
