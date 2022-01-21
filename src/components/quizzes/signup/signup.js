@@ -7,6 +7,7 @@ function Signup() {
   const [username, setUserName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState(undefined);
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
@@ -23,12 +24,14 @@ function Signup() {
         navigate("/quizzes");
       })
       .catch((err) => {
-        console.log(err);
+        const { message } = err.response.data;
+        setError(message);
       });
   };
   return (
     <div className="signup">
       <div className="container">
+        {error && <p className="errorMsg">{error}</p>}
         <form onSubmit={handleSubmit}>
           <input
             type="text"
