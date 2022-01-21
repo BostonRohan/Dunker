@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import getUser from "../utils/getUser";
 import "./styles.css";
 function Signup() {
   const [username, setUserName] = useState("");
@@ -8,18 +9,18 @@ function Signup() {
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const userData = {
       username: username,
       email: email,
       password: password,
     };
-
-    axios
+    await axios
       .post("http://localhost:5000/quizzes/signup", userData)
       .then(() => {
-        navigate("/quizzes/");
+        getUser();
+        navigate("/quizzes");
       })
       .catch((err) => {
         console.log(err);

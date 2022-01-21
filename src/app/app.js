@@ -10,6 +10,9 @@ import "./global.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import Signup from "../components/quizzes/signup/signup";
 
+//Accepts cookies
+axios.defaults.withCredentials = true;
+
 function App() {
   const [width, setWidth] = useState(window.innerWidth);
   const [allPlayers, setAllPlayers] = useState([]);
