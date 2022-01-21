@@ -6,15 +6,6 @@
   margin: 1em;
   border-radius: 0.5em;
 }
-.Players input[type="submit"] {
-  padding: 1em 2em;
-  margin: 1em;
-  border-radius: 0.5em;
-  background-color: var(--color-primary);
-  border-color: var(--color-primary);
-  color: var(--text-color-primary);
-  cursor: pointer;
-}
 .Players .container {
   margin: 0 auto;
   max-width: 95%;

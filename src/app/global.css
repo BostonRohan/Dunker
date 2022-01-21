@@ -37,3 +37,19 @@ h4 {
   background-color: var(--card-color);
   border-radius: 1em;
 }
+input[type="email"],
+input[type="password"],
+input[type="text"] {
+  padding: 0.5rem 2rem;
+  display: block;
+  margin: 3rem;
+}
+input[type="submit"] {
+  padding: 1em 2em;
+  margin: 1em;
+  border-radius: 0.5em;
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  color: var(--text-color-primary);
+  cursor: pointer;
+}

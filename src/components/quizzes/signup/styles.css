@@ -2,4 +2,13 @@
   height: 100vh;
   display: flex;
   align-items: center;
+  color: var(--text-color-primary);
+}
+.signup input[type="submit"] {
+  margin: 1rem auto;
+  display: block;
+}
+.signup .container {
+  max-width: 95%;
+  margin: 0 auto;
 }
