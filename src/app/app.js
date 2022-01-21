@@ -6,9 +6,10 @@ import Nav from "../components/nav/nav";
 import Players from "../components/players/players";
 import Quizzes from "../components/quizzes/quizzes";
 import Footer from "../components/footer/footer";
+import Signup from "../components/quizzes/signup/signup";
+import Login from "../components/quizzes/login/login";
 import "./global.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
-import Signup from "../components/quizzes/signup/signup";
 
 //Accepts cookies
 axios.defaults.withCredentials = true;
@@ -75,6 +76,7 @@ function App() {
         />
         <Route path="/quizzes" element={<Quizzes />} />
         <Route path="/quizzes/signup" element={<Signup />} />
+        <Route path="/quizzes/login" element={<Login />} />
       </Routes>
     </BrowserRouter>
   );
