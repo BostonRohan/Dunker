@@ -19,11 +19,11 @@ function Login({ getUser }) {
       };
 
       await axios.post("http://localhost:5000/quizzes/login", userData);
-      await getUser();
     } catch (err) {
       const { message } = err.response.data;
       setError(message);
     }
+    await getUser();
     navigate("/quizzes");
   };
   return (

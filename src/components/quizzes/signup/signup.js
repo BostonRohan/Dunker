@@ -18,11 +18,11 @@ function Signup({ getUser }) {
         password: password,
       };
       await axios.post("http://localhost:5000/quizzes/signup", userData);
-      await getUser();
     } catch (err) {
       const { message } = err.response.data;
       setError(message);
     }
+    await getUser();
     navigate("/quizzes");
   };
   return (

@@ -5,13 +5,12 @@ import "./styles.css";
 
 function Quizzes({ user, getUser }) {
   const [open, setOpen] = useState(false);
-  console.log(user);
 
   useEffect(getUser, [getUser]);
 
   const logout = async () => {
     try {
-      await axios.post("http://localhost:5000/quizzes/");
+      await axios.get("http://localhost:5000/quizzes/logout");
       await getUser();
     } catch (err) {
       console.log(err);
