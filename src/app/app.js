@@ -11,9 +11,6 @@ import Login from "../components/quizzes/login/login";
 import "./global.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 
-//Accepts cookies
-axios.defaults.withCredentials = true;
-
 function App() {
   const [width, setWidth] = useState(window.innerWidth);
   const [allPlayers, setAllPlayers] = useState([]);
@@ -45,7 +42,7 @@ function App() {
   };
   const getUser = async () => {
     await axios
-      .get("http://localhost:5000/quizzes/")
+      .get("http://localhost:5000/quizzes/", { withCredentials: true })
       .then((res) => {
         setUser(res.data);
       })

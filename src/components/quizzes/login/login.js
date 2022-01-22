@@ -18,7 +18,9 @@ function Login({ getUser }) {
         password: password,
       };
 
-      await axios.post("http://localhost:5000/quizzes/login", userData);
+      await axios.post("http://localhost:5000/quizzes/login", userData, {
+        withCredentials: true,
+      });
     } catch (err) {
       const { message } = err.response.data;
       setError(message);

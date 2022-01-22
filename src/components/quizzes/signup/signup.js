@@ -17,7 +17,9 @@ function Signup({ getUser }) {
         email: email,
         password: password,
       };
-      await axios.post("http://localhost:5000/quizzes/signup", userData);
+      await axios.post("http://localhost:5000/quizzes/signup", userData, {
+        withCredentials: true,
+      });
     } catch (err) {
       const { message } = err.response.data;
       setError(message);
