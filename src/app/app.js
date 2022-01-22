@@ -18,6 +18,7 @@ function App() {
   const [width, setWidth] = useState(window.innerWidth);
   const [allPlayers, setAllPlayers] = useState([]);
   const [recentTweet, setRecentTweet] = useState({ id: "", text: "" });
+  const [user, setUser] = useState(null);
 
   const fetchAllPlayers = async () => {
     await axios
@@ -41,6 +42,14 @@ function App() {
       .catch((err) => {
         console.log(err);
       });
+  };
+  const getUser = async () => {
+    await axios
+      .get("http://localhost:5000/quizzes/")
+      .then((res) => {
+        setUser(res.data);
+      })
+      .catch((err) => console.log(err));
   };
 
   useEffect(() => {
@@ -74,9 +83,12 @@ function App() {
           path="/players"
           element={<Players width={width} allPlayers={allPlayers} />}
         />
-        <Route path="/quizzes" element={<Quizzes />} />
-        <Route path="/quizzes/signup" element={<Signup />} />
-        <Route path="/quizzes/login" element={<Login />} />
+        <Route
+          path="/quizzes"
+          element={<Quizzes user={user} getUser={getUser} />}
+        />
+        <Route path="/quizzes/signup" element={<Signup getUser={getUser} />} />
+        <Route path="/quizzes/login" element={<Login getUser={getUser} />} />
       </Routes>
     </BrowserRouter>
   );

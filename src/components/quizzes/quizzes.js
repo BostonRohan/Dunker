@@ -1,16 +1,13 @@
 import { useEffect, useState } from "react";
-import getUser from "./utils/getUser";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import "./styles.css";
 
-function Quizzes() {
+function Quizzes({ user, getUser }) {
   const [open, setOpen] = useState(false);
-  const user = localStorage.getItem("user");
+  console.log(user);
 
-  useEffect(() => {
-    getUser();
-  }, []);
+  useEffect(getUser, [getUser]);
 
   const logout = async () => {
     try {
@@ -30,16 +27,16 @@ function Quizzes() {
       >
         <img
           src={
-            user !== "null"
+            user !== null
               ? "./user-logos/jordan.jpg"
               : "./user-logos/blank-profile.png"
           }
-          alt="Profile Photo"
+          alt=""
         />
-        {user !== "null" && <h3>{user}</h3>}
+        {user !== null && <h3>{user}</h3>}
         {open && (
           <>
-            {user === "null" ? (
+            {user === null ? (
               <>
                 <Link to="/quizzes/signup">Signup</Link>
                 <Link to="/quizzes/login">Login</Link>

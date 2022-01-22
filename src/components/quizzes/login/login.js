@@ -1,30 +1,30 @@
 import axios from "axios";
 import { useState } from "react";
-import getUser from "../utils/getUser";
+import { useNavigate } from "react-router-dom";
 import "./styles.css";
 
-function Login() {
+function Login({ getUser }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(undefined);
+  const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const userData = {
-      email: email,
-      password: password,
-    };
+    try {
+      const userData = {
+        email: email,
+        password: password,
+      };
 
-    axios
-      .post("http://localhost:5000/quizzes/login", userData)
-      .then(() => {
-        getUser();
-      })
-      .catch((err) => {
-        const { message } = err.response.data;
-        setError(message);
-      });
+      await axios.post("http://localhost:5000/quizzes/login", userData);
+      await getUser();
+    } catch (err) {
+      const { message } = err.response.data;
+      setError(message);
+    }
+    navigate("/quizzes");
   };
   return (
     <div className="login">

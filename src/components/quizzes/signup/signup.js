@@ -1,9 +1,8 @@
 import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import getUser from "../utils/getUser";
 import "./styles.css";
-function Signup() {
+function Signup({ getUser }) {
   const [username, setUserName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -12,21 +11,19 @@ function Signup() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const userData = {
-      username: username,
-      email: email,
-      password: password,
-    };
-    await axios
-      .post("http://localhost:5000/quizzes/signup", userData)
-      .then(() => {
-        getUser();
-        navigate("/quizzes");
-      })
-      .catch((err) => {
-        const { message } = err.response.data;
-        setError(message);
-      });
+    try {
+      const userData = {
+        username: username,
+        email: email,
+        password: password,
+      };
+      await axios.post("http://localhost:5000/quizzes/signup", userData);
+      await getUser();
+    } catch (err) {
+      const { message } = err.response.data;
+      setError(message);
+    }
+    navigate("/quizzes");
   };
   return (
     <div className="signup">
