@@ -39,16 +39,20 @@ function Quizzes({ user, getUser }) {
           <>
             {user === null ? (
               <>
-                <Link to="/quizzes/signup">Signup</Link>
-                <Link to="/quizzes/login">Login</Link>
+                <h3>
+                  <Link to="/quizzes/signup">Signup</Link>
+                </h3>
+                <h3>
+                  <Link to="/quizzes/login">Login</Link>
+                </h3>
               </>
             ) : (
-              <p onClick={logout}>Logout</p>
+              <h3 onClick={logout}>Logout</h3>
             )}
           </>
         )}
       </section>
-      <div className="container">Hello World</div>
+      <div className="container"></div>
     </section>
   );
 }
