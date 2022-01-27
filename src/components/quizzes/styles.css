@@ -22,17 +22,24 @@
   justify-content: center;
   align-items: center;
 }
-.quizzes .container {
+.quiz-options .container {
   display: flex;
+  flex-direction: column;
   flex: 1 1 calc(100%-50px);
   height: 20rem;
   width: 25rem;
   margin: 1rem;
   justify-content: center;
   align-items: center;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+.quiz-options .container img {
+  width: 4rem;
 }
 @media screen and (max-width: 37.5em) {
-  .header img {
+  .header img,
+  .quiz-options .container img {
     width: 2rem;
   }
 }

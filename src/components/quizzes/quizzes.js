@@ -58,7 +58,8 @@ function Quizzes({ user, getUser }) {
         {options.map((name, i) => {
           return (
             <div key={i} className="container">
-              {name}
+              <img src="./quiz-images/nba-logo.png" alt="" />
+              <p>{name}</p>
             </div>
           );
         })}
