@@ -1,12 +1,14 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import QuizData from "./quizzes.json";
 import "./styles.css";
 
 function Quizzes({ user, getUser }) {
   const [open, setOpen] = useState(false);
+  const options = Object.keys(QuizData);
 
-  useEffect(getUser, [getUser]);
+  useEffect(getUser, []);
 
   const logout = async () => {
     try {
@@ -52,7 +54,15 @@ function Quizzes({ user, getUser }) {
           </>
         )}
       </section>
-      <div className="container"></div>
+      <div className="quiz-options">
+        {options.map((name, i) => {
+          return (
+            <div key={i} className="container">
+              {name}
+            </div>
+          );
+        })}
+      </div>
     </section>
   );
 }

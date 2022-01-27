@@ -12,12 +12,27 @@
   gap: 0.5rem;
 }
 .header img {
-  max-width: 7%;
+  width: 4rem;
   border-radius: 50%;
 }
+.quiz-options {
+  min-height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
 .quizzes .container {
-  font-size: 1.2rem;
-  max-width: 95%;
-  margin: 0 auto;
-  padding: 2em;
+  display: flex;
+  flex: 1 1 calc(100%-50px);
+  height: 20rem;
+  width: 25rem;
+  margin: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+@media screen and (max-width: 37.5em) {
+  .header img {
+    width: 2rem;
+  }
 }
