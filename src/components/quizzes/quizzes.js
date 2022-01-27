@@ -23,7 +23,7 @@ function Quizzes({ user, getUser }) {
     }
   };
 
-  const handleClick = ({ name }) => {
+  const handleClick = (name) => {
     if (user === null) return;
     else navigate(`/quiz/${name}`);
   };
@@ -44,20 +44,20 @@ function Quizzes({ user, getUser }) {
           }
           alt=""
         />
-        {user !== null && <h3>{user}</h3>}
+        {user !== null && <h5>{user}</h5>}
         {open && (
           <>
             {user === null ? (
               <>
-                <h3>
+                <h4>
                   <Link to="/quizzes/signup">Signup</Link>
-                </h3>
-                <h3>
+                </h4>
+                <h4>
                   <Link to="/quizzes/login">Login</Link>
-                </h3>
+                </h4>
               </>
             ) : (
-              <h3 onClick={logout}>Logout</h3>
+              <h4 onClick={logout}>Logout</h4>
             )}
           </>
         )}
