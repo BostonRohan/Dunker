@@ -2,11 +2,13 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import QuizData from "./quizzes.json";
+import { useNavigate } from "react-router-dom";
 import "./styles.css";
 
 function Quizzes({ user, getUser }) {
   const [open, setOpen] = useState(false);
   const options = Object.keys(QuizData);
+  const navigate = useNavigate();
 
   useEffect(getUser, []);
 
@@ -57,7 +59,11 @@ function Quizzes({ user, getUser }) {
       <div className="quiz-options">
         {options.map((name, i) => {
           return (
-            <div key={i} className="container">
+            <div
+              key={i}
+              className="container"
+              onClick={() => navigate(`/quiz/${name}`)}
+            >
               <img src="./quiz-images/nba-logo.png" alt="" />
               <p>{name}</p>
             </div>
