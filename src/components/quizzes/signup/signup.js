@@ -2,7 +2,7 @@ import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./styles.css";
-function Signup({ getUser }) {
+function Signup() {
   const [username, setUserName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -20,12 +20,11 @@ function Signup({ getUser }) {
       await axios.post("http://localhost:5000/quizzes/signup", userData, {
         withCredentials: true,
       });
+      navigate("/quizzes");
     } catch (err) {
       const { message } = err.response.data;
       setError(message);
     }
-    await getUser();
-    navigate("/quizzes");
   };
   return (
     <div className="signup">

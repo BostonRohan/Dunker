@@ -21,12 +21,11 @@ function Login({ getUser }) {
       await axios.post("http://localhost:5000/quizzes/login", userData, {
         withCredentials: true,
       });
+      navigate("/quizzes");
     } catch (err) {
       const { message } = err.response.data;
       setError(message);
     }
-    await getUser();
-    navigate("/quizzes");
   };
   return (
     <div className="login">
