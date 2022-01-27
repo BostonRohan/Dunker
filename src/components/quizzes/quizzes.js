@@ -7,6 +7,7 @@ import "./styles.css";
 
 function Quizzes({ user, getUser }) {
   const [open, setOpen] = useState(false);
+  const [error, setError] = useState(undefined);
   const options = Object.keys(QuizData);
   const navigate = useNavigate();
 
@@ -24,8 +25,10 @@ function Quizzes({ user, getUser }) {
   };
 
   const handleClick = (name) => {
-    if (user === null) return;
-    else navigate(`/quiz/${name}`);
+    if (user === null) {
+      setError("You must be signed in to complete a quiz");
+      return;
+    } else navigate(`/quiz/${name}`);
   };
 
   return (
@@ -44,7 +47,7 @@ function Quizzes({ user, getUser }) {
           }
           alt=""
         />
-        {user !== null && <h5>{user}</h5>}
+        {user !== null && <h3>{user}</h3>}
         {open && (
           <>
             {user === null ? (
@@ -63,6 +66,7 @@ function Quizzes({ user, getUser }) {
         )}
       </section>
       <div className="quiz-options">
+        {error && <h4 className="errorMsg">{error}</h4>}
         {options.map((name, i) => {
           return (
             <div
