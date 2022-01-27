@@ -22,6 +22,12 @@ function Quizzes({ user, getUser }) {
       console.log(err);
     }
   };
+
+  const handleClick = ({ name }) => {
+    if (user === null) return;
+    else navigate(`/quiz/${name}`);
+  };
+
   return (
     <section className="quizzes">
       <section
@@ -62,7 +68,7 @@ function Quizzes({ user, getUser }) {
             <div
               key={i}
               className="container"
-              onClick={() => navigate(`/quiz/${name}`)}
+              onClick={() => handleClick(name)}
             >
               <img src="./quiz-images/nba-logo.png" alt="" />
               <p>{name}</p>
