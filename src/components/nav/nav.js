@@ -12,7 +12,7 @@ function Nav({ width }) {
   const handleClick = ({ section }) => {
     if (location !== "/") {
       if (section === "Players" || section === "Quizzes") {
-        navigate(section);
+        navigate(section.toLowerCase());
       } else {
         //Return to home, then scroll to section
         navigate("/");
