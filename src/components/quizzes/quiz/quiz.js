@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useLocation } from "react-router-dom";
 import QuizData from "../quizzes.json";
 import QuizAnswerData from "../quiz-answers.json";
+import "./styles.css";
 
 function Quiz() {
   const [question, setQuestion] = useState(0);
@@ -20,23 +21,25 @@ function Quiz() {
   };
 
   return (
-    <div className="container">
-      {question <= 10 && (
-        <section>
-          <h1>{QuizData[page][question]}</h1>
-          {possibleAnswers.map((answer, i) => {
-            return (
-              <div
-                key={i}
-                className="quiz-answer"
-                onClick={() => handleClick(i)}
-              >
-                {answer}
-              </div>
-            );
-          })}
-        </section>
-      )}
+    <div className="Quiz">
+      <div className="container">
+        {question <= 10 && (
+          <section>
+            <h1>{QuizData[page][question]}</h1>
+            {possibleAnswers.map((answer, i) => {
+              return (
+                <div
+                  key={i}
+                  className="quiz-answer"
+                  onClick={() => handleClick(i)}
+                >
+                  {answer}
+                </div>
+              );
+            })}
+          </section>
+        )}
+      </div>
     </div>
   );
 }

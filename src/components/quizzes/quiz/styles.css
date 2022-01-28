@@ -1,0 +1,36 @@
+.Quiz {
+  width: 100%;
+  height: 100vh;
+  color: var(--text-color-primary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.Quiz .container {
+  text-align: center;
+  font-size: 1.2rem;
+  max-width: 95%;
+  min-height: 75%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2em;
+}
+.quiz-answer {
+  margin: 2rem auto;
+  border: 0.0625rem solid var(--color-accent);
+  max-width: 25%;
+  padding: 0.5rem;
+  border-radius: 1em;
+  background-color: var(--color-accent);
+  cursor: pointer;
+}
+.quiz-answer:hover {
+  opacity: 0.8;
+}
+
+@media screen and (max-width: 37.5em) {
+  .quiz-answer {
+    min-width: 75%;
+  }
+}
