@@ -66,7 +66,6 @@ function Quizzes({ user, getUser }) {
         )}
       </section>
       <div className="quiz-options">
-        {error && <h4 className="errorMsg">{error}</h4>}
         {options.map((name, i) => {
           return (
             <div
@@ -74,6 +73,7 @@ function Quizzes({ user, getUser }) {
               className="container"
               onClick={() => handleClick(name)}
             >
+              {error && <h5 className="errorMsg">{error}</h5>}
               <img src="./quiz-images/nba-logo.png" alt="" />
               <p>{name}</p>
             </div>
