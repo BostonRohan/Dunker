@@ -23,7 +23,7 @@ function Quiz() {
   return (
     <div className="Quiz">
       <div className="container">
-        {question <= 10 && (
+        {question < 10 ? (
           <section>
             <h1>{QuizData[page][question]}</h1>
             {possibleAnswers.map((answer, i) => {
@@ -37,6 +37,10 @@ function Quiz() {
                 </div>
               );
             })}
+          </section>
+        ) : (
+          <section>
+            <h2>Your Score : </h2>
           </section>
         )}
       </div>
