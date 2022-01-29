@@ -11,8 +11,8 @@ function Quiz() {
   const [score, setScore] = useState(0);
   const location = useLocation();
   const page = location.pathname.split("/")[2];
+  const scoreSplit = parseInt(score.toString().split("%")[0]);
   let possibleAnswers = QuizAnswerData[page][question];
-  console.log(score, question, page);
 
   const handleClick = (i) => {
     setSelected([...selected, i]);
@@ -53,7 +53,20 @@ function Quiz() {
           </section>
         ) : (
           <section>
-            <h2>Your Score : {score}</h2>
+            <h2>
+              Your Score :
+              <span className={scoreSplit > 50 ? "correctMsg" : "errorMsg"}>
+                {score}
+              </span>
+            </h2>
+            <img
+              src={
+                scoreSplit > 50
+                  ? "../quiz-images/lebron-crazy.jpg"
+                  : "../quiz-images/jordan-crying.jpg"
+              }
+              alt=""
+            />
           </section>
         )}
       </div>
