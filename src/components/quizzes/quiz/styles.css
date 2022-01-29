@@ -6,6 +6,11 @@
   justify-content: center;
   align-items: center;
 }
+.Quiz img {
+  width: 10rem;
+  margin: 5rem auto;
+  border-radius: 0.625rem;
+}
 .Quiz .container {
   text-align: center;
   font-size: 1.2rem;
@@ -14,13 +19,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 2em;
+  padding: 5em;
 }
 .quiz-answer {
   margin: 2rem auto;
   border: 0.0625rem solid var(--color-accent);
   max-width: 25%;
-  padding: 0.5rem;
+  padding: 1rem;
   border-radius: 1em;
   background-color: var(--color-accent);
   cursor: pointer;
