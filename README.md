@@ -1,12 +1,13 @@
 # Dunker
 
-![Dunker Homepage](/public/Dunker.png)
+[<img src="/public/Dunker.png">](https://Dunker.vercel.app)
 
 ## Table of Contents
 
 - [General Info](#general-info)
 - [Technologies](#technologies)
 - [Setup](#setup)
+- [Extra Information](#extra-information)
 
 ## General Info
 
@@ -34,3 +35,7 @@ $ cd ../Dunker/client
 $ npm install
 $ npm start
 ```
+
+## Extra Information
+
+- [Server Repository](https://github.com/BostonRohan/Dunker-Server)
