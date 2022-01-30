@@ -43,6 +43,7 @@ function Quiz() {
         {error && <p className="errorMsg">{error}</p>}
         {question < 10 ? (
           <section>
+            {page === "player" && <p>* 2022 season</p>}
             <h1>{QuizData[page][question]}</h1>
             {possibleAnswers.map((answer, i) => {
               return (
