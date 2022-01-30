@@ -9,6 +9,7 @@ function Quiz() {
   const [question, setQuestion] = useState(0);
   const [selected, setSelected] = useState([]);
   const [score, setScore] = useState(0);
+  const [error, setError] = useState("");
   const location = useLocation();
   const page = location.pathname.split("/")[2];
   let possibleAnswers = QuizAnswerData[page][question];
@@ -23,7 +24,10 @@ function Quiz() {
       .then((res) => {
         setScore(parseInt(res.data));
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        const { message } = err.response.data;
+        setError(message);
+      });
   };
 
   const handleClick = (i) => {
@@ -36,6 +40,7 @@ function Quiz() {
   return (
     <div className="Quiz">
       <div className="container">
+        {error && <p className="errorMsg">{error}</p>}
         {question < 10 ? (
           <section>
             <h1>{QuizData[page][question]}</h1>
