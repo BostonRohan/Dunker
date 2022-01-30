@@ -11,27 +11,27 @@ function Quiz() {
   const [score, setScore] = useState(0);
   const location = useLocation();
   const page = location.pathname.split("/")[2];
-  const scoreSplit = parseInt(score.toString().split("%")[0]);
   let possibleAnswers = QuizAnswerData[page][question];
+
+  const postQuiz = async () => {
+    await axios
+      .post(
+        `http://localhost:5000/quiz/${page}`,
+        { [page]: selected },
+        { withCredentials: true }
+      )
+      .then((res) => {
+        setScore(parseInt(res.data));
+      })
+      .catch((err) => console.log(err));
+  };
 
   const handleClick = (i) => {
     setSelected([...selected, i]);
     setQuestion(question + 1);
-
-    if (question === 9) {
-      axios
-        .post(
-          `http://localhost:5000/quiz/${page}`,
-          { [page]: selected },
-          { withCredentials: true }
-        )
-        .then((res) => {
-          console.log(res.data);
-          setScore(res.data);
-        })
-        .catch((err) => console.log(err));
-    }
   };
+
+  if (question === 10) postQuiz();
 
   return (
     <div className="Quiz">
@@ -54,14 +54,14 @@ function Quiz() {
         ) : (
           <section>
             <h2>
-              Your Score :
-              <span className={scoreSplit > 50 ? "correctMsg" : "errorMsg"}>
-                {score}
+              Your Score:{" "}
+              <span className={score > 5 ? "correctMsg" : "errorMsg"}>
+                {score + "0" + "." + "00%"}
               </span>
             </h2>
             <img
               src={
-                scoreSplit > 50
+                score > 5
                   ? "../quiz-images/lebron-crazy.jpg"
                   : "../quiz-images/jordan-crying.jpg"
               }
