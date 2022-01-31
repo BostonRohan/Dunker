@@ -7,7 +7,7 @@ function Home({ allPlayers, width, id }) {
   return (
     <>
       <Landing />
-      <About width={width} />
+      <About />
       <Games width={width} allPlayers={allPlayers} />
       <News id={id} />
     </>
