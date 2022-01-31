@@ -30,7 +30,7 @@ function App() {
   };
   const fetchTweet = async () => {
     await axios
-      .get("http://localhost:5000/")
+      .get("https://dunker-server.vercel.app/")
       .then((res) => {
         setRecentTweet({
           id: res.data.meta.newest_id,
@@ -43,7 +43,9 @@ function App() {
   };
   const getUser = async () => {
     await axios
-      .get("http://localhost:5000/quizzes/", { withCredentials: true })
+      .get("https://dunker-server.vercel.app/quizzes/", {
+        withCredentials: true,
+      })
       .then((res) => {
         setUser(res.data);
       })
