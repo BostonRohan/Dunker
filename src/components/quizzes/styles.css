@@ -2,19 +2,17 @@
   color: var(--text-color-primary);
   height: 100vh;
 }
-.header {
-  width: 10%;
-  position: fixed;
+.login-signup {
   display: flex;
-  align-items: center;
-  flex-direction: column;
-  top: 1rem;
-  gap: 0.5rem;
+  gap: 2rem;
+  margin: 4.5rem 3rem;
+  position: absolute;
+}
+.logout {
   cursor: pointer;
 }
-.header img {
-  width: 5rem;
-  border-radius: 50%;
+.user {
+  opacity: 0.9;
 }
 .quiz-options {
   min-height: 100%;
@@ -43,12 +41,12 @@
   .quiz-options {
     padding-top: 10rem;
   }
-  .header img,
   .quiz-options .container img {
     width: 4rem;
   }
-  .header {
-    width: 150%;
-    margin: 3rem;
+  .login-signup {
+    width: 100%;
+    justify-content: flex-end;
+    padding: 1rem 5rem;
   }
 }
