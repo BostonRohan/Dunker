@@ -14,8 +14,9 @@
   display: flex;
   gap: 2em;
 }
-.About .content video {
-  max-width: 60%;
+.About .content p {
+  max-width: 85%;
+  margin: 0 auto;
 }
 .About .container span {
   border: 1px solid var(--discord-color);
