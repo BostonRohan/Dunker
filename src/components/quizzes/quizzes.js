@@ -14,7 +14,7 @@ function Quizzes({ user, getUser }) {
 
   const logout = async () => {
     try {
-      await axios.get("https://dunker-server.vercel.app/quizzes/logout", {
+      await axios.get("https://dunkerio.herokuapp.com/quizzes/logout", {
         withCredentials: true,
       });
       await getUser();

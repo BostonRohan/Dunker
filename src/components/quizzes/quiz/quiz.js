@@ -17,7 +17,7 @@ function Quiz() {
   const postQuiz = async () => {
     await axios
       .post(
-        `https://dunker-server.vercel.app/quiz/${page}`,
+        `https://dunkerio.herokuapp.com/quiz/${page}`,
         { [page]: selected },
         { withCredentials: true }
       )

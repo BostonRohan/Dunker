@@ -18,9 +18,13 @@ function Login({ getUser }) {
         password: password,
       };
 
-      await axios.post("http://localhost:5000/quizzes/login", userData, {
-        withCredentials: true,
-      });
+      await axios.post(
+        "https://dunkerio.herokuapp.com/quizzes/login",
+        userData,
+        {
+          withCredentials: true,
+        }
+      );
       navigate("/quizzes");
     } catch (err) {
       const { message } = err.response.data;
