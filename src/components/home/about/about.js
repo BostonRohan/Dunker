@@ -1,5 +1,5 @@
 import "./styles.css";
-function About({ width }) {
+function About() {
   return (
     <section className="About">
       <div className="container">
@@ -14,15 +14,6 @@ function About({ width }) {
             than Adrian Wojnarowski, take nba quizzes, or compare your favorite
             players? Dunker is the place to be!
           </p>
-          {width > 1200 && (
-            <video
-              src="./highlights.mp4"
-              alt="nba highlights"
-              autoPlay
-              muted
-              loop
-            ></video>
-          )}
         </section>
         <h3>Join the community!</h3>
         <span>
