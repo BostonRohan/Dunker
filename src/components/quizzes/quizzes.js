@@ -6,7 +6,6 @@ import { useNavigate } from "react-router-dom";
 import "./styles.css";
 
 function Quizzes({ user, getUser }) {
-  const [open, setOpen] = useState(false);
   const [error, setError] = useState(undefined);
   const options = Object.keys(QuizData);
   const navigate = useNavigate();
@@ -33,36 +32,17 @@ function Quizzes({ user, getUser }) {
 
   return (
     <section className="quizzes">
-      <section
-        className="header"
-        onClick={() => {
-          setOpen(!open);
-        }}
-      >
-        <img
-          src={
-            user !== null
-              ? "./user-logos/jordan.jpg"
-              : "./user-logos/blank-profile.png"
-          }
-          alt=""
-        />
-        {user !== null && <h3>{user}</h3>}
-        {open && (
+      <section className="login-signup">
+        {user !== null && <h4 className="user">{user}</h4>}
+        {user === null ? (
           <>
-            {user === null ? (
-              <>
-                <h4>
-                  <Link to="/quizzes/signup">Signup</Link>
-                </h4>
-                <h4>
-                  <Link to="/quizzes/login">Login</Link>
-                </h4>
-              </>
-            ) : (
-              <h4 onClick={logout}>Logout</h4>
-            )}
+            <Link to="/quizzes/signup">Signup</Link>
+            <Link to="/quizzes/login">Login</Link>
           </>
+        ) : (
+          <h4 className="logout" onClick={logout}>
+            Logout
+          </h4>
         )}
       </section>
       <div className="quiz-options">
