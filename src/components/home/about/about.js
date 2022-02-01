@@ -7,7 +7,7 @@ function About() {
         <section className="content">
           <p>
             As an avid basketball follower and former high school player, I know
-            how serious the baber-shop talks and debates over LeBron vs Jordan
+            how serious the barber-shop talks and debates over LeBron vs Jordan
             can get. Dunker is an app created to fund these arguments and
             encourage people to stay immersed in the basketball community. Ever
             need to see today's slate of games, view new news from none other
