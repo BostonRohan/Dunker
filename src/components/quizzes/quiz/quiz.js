@@ -8,7 +8,7 @@ import "./styles.css";
 function Quiz() {
   const [question, setQuestion] = useState(0);
   const [selected, setSelected] = useState([]);
-  const [score, setScore] = useState(0);
+  const [score, setScore] = useState(undefined);
   const [error, setError] = useState("");
   const location = useLocation();
   const page = location.pathname.split("/")[2];
@@ -58,22 +58,24 @@ function Quiz() {
             })}
           </section>
         ) : (
-          <section>
-            <h2>
-              Your Score:{" "}
-              <span className={score > 5 ? "correctMsg" : "errorMsg"}>
-                {score + "0" + "." + "00%"}
-              </span>
-            </h2>
-            <img
-              src={
-                score > 5
-                  ? "../quiz-images/lebron-crazy.jpg"
-                  : "../quiz-images/jordan-crying.jpg"
-              }
-              alt=""
-            />
-          </section>
+          score && (
+            <section>
+              <h2>
+                Your Score:{" "}
+                <span className={score > 5 ? "correctMsg" : "errorMsg"}>
+                  {score + "0" + "." + "00%"}
+                </span>
+              </h2>
+              <img
+                src={
+                  score > 5
+                    ? "../quiz-images/lebron-crazy.jpg"
+                    : "../quiz-images/jordan-crying.jpg"
+                }
+                alt=""
+              />
+            </section>
+          )
         )}
       </div>
     </div>
