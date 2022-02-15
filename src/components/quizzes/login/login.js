@@ -25,6 +25,7 @@ function Login({ getUser }) {
           withCredentials: true,
         }
       );
+      await getUser();
       navigate("/quizzes");
     } catch (err) {
       const { message } = err.response.data;
