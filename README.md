@@ -1,7 +1,13 @@
 # Dunker
 
-[<img src="/public/Dunker.png">](https://Dunker.vercel.app)
-[<img src="/public/Dunker-boxscore.png">](https://Dunker.vercel.app)
+[<img src="/public/screenshots/home.png">](https://Dunker.vercel.app)
+[<img src="/public/screenshots/about.png">](https://Dunker.vercel.app)
+[<img src="/public/screenshots/games.png">](https://Dunker.vercel.app)
+[<img src="/public/screenshots/boxscore.png">](https://Dunker.vercel.app)
+[<img src="/public/screenshots/player.png">](https://Dunker.vercel.app)
+[<img src="/public/screenshots/quiz.png">](https://Dunker.vercel.app)
+[<img src="/public/screenshots/score.png">](https://Dunker.vercel.app)
+[<img src="/public/screenshots/news.png">](https://Dunker.vercel.app)
 
 ## Table of Contents
 
