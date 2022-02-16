@@ -31,10 +31,11 @@ Dunker is an application for people who love basketball and love to stay updated
 
 - react: ^17.0.2
 - axios: ^0.24.0
-- react-scroll: ^.1.8.4
+- react-scroll: ^1.8.4
 - react-router-dom: ^6.2.1
 - bootstrap-icons: ^1.7.2
 - hamburger-react: ^2.4.1
+- framer-motion: ^6.2.6
 
 ## Public API's Used
 
