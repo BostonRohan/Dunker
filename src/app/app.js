@@ -6,8 +6,6 @@ import Nav from "../components/nav/nav";
 import Players from "../components/players/players";
 import Quizzes from "../components/quizzes/quizzes";
 import Footer from "../components/footer/footer";
-import Signup from "../components/quizzes/signup/signup";
-import Login from "../components/quizzes/login/login";
 import Quiz from "../components/quizzes/quiz/quiz";
 import "./global.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
@@ -73,8 +71,6 @@ function App() {
           element={<Players width={width} allPlayers={allPlayers} />}
         />
         <Route path="/quizzes" element={<Quizzes />} />
-        <Route path="/quizzes/signup" element={<Signup />} />
-        <Route path="/quizzes/login" element={<Login />} />
         <Route path="quiz/:name" element={<Quiz />} />
       </Routes>
     </BrowserRouter>
