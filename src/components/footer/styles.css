@@ -21,8 +21,3 @@ footer h3 {
 footer section i {
   color: var(--twitter-color);
 }
-@keyframes animate {
-  100% {
-    transform: translate(-100%, 0);
-  }
-}
