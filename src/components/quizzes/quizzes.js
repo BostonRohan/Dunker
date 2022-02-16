@@ -5,20 +5,15 @@ import QuizData from "./quizzes.json";
 import { useNavigate } from "react-router-dom";
 import "./styles.css";
 
-function Quizzes({ user, getUser }) {
+function Quizzes() {
+  const user = localStorage.getItem("user");
   const [error, setError] = useState(undefined);
   const options = Object.keys(QuizData);
   const navigate = useNavigate();
 
-  useEffect(getUser, []);
-
   const logout = async () => {
-    try {
-      await axios.get("https://dunkerio.herokuapp.com/quizzes/logout");
-      await getUser();
-    } catch (err) {
-      console.log(err);
-    }
+    localStorage.clear();
+    window.location.reload(false);
   };
 
   const handleClick = (name) => {
