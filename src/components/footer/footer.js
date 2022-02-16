@@ -2,7 +2,6 @@ import { Link } from "react-scroll";
 import { motion } from "framer-motion";
 import "./styles.css";
 function Footer({ tweet, width }) {
-  console.log(-width / 2);
   return (
     <footer>
       <Link activeClass={"active"} to="News" smooth={true} duration={1000}>
