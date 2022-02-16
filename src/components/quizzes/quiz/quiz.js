@@ -16,11 +16,7 @@ function Quiz() {
 
   const postQuiz = async () => {
     await axios
-      .post(
-        `https://dunkerio.herokuapp.com/quiz/${page}`,
-        { [page]: selected },
-        { withCredentials: true }
-      )
+      .post(`https://dunkerio.herokuapp.com/quiz/${page}`, { [page]: selected })
       .then((res) => {
         setScore(parseInt(res.data));
       })

@@ -20,10 +20,7 @@ function Login({ getUser }) {
 
       await axios.post(
         "https://dunkerio.herokuapp.com/quizzes/login",
-        userData,
-        {
-          withCredentials: true,
-        }
+        userData
       );
       await getUser();
       navigate("/quizzes");

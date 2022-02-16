@@ -43,9 +43,7 @@ function App() {
   };
   const getUser = async () => {
     await axios
-      .get("https://dunkerio.herokuapp.com/quizzes/", {
-        withCredentials: true,
-      })
+      .get("https://dunkerio.herokuapp.com/quizzes/")
       .then((res) => {
         setUser(res.data);
       })

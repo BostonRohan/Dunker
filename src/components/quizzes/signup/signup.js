@@ -19,10 +19,7 @@ function Signup() {
       };
       await axios.post(
         "https://dunkerio.herokuapp.com/quizzes/signup",
-        userData,
-        {
-          withCredentials: true,
-        }
+        userData
       );
       navigate("/quizzes");
     } catch (err) {
