@@ -21,7 +21,7 @@ function Signup() {
         "https://dunkerio.herokuapp.com/quizzes/signup",
         userData
       );
-      navigate("/quizzes");
+      navigate("/quizzes/login");
     } catch (err) {
       const { message } = err.response.data;
       setError(message);
