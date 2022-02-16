@@ -10,8 +10,6 @@
 
 [<img src="/public/screenshots/player.png">](https://Dunker.vercel.app)
 
-[<img src="/public/screenshots/quiz.png">](https://Dunker.vercel.app)
-
 [<img src="/public/screenshots/question.png">](https://Dunker.vercel.app)
 
 [<img src="/public/screenshots/score.png">](https://Dunker.vercel.app)
