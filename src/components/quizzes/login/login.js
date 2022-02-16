@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./styles.css";
 
-function Login({ getUser }) {
+function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(undefined);
@@ -18,11 +18,11 @@ function Login({ getUser }) {
         password: password,
       };
 
-      await axios.post(
-        "https://dunkerio.herokuapp.com/quizzes/login",
-        userData
-      );
-      await getUser();
+      await axios
+        .post("https://dunkerio.herokuapp.com/quizzes/login", userData)
+        .then((res) => {
+          localStorage.setItem("user", res.data);
+        });
       navigate("/quizzes");
     } catch (err) {
       const { message } = err.response.data;
