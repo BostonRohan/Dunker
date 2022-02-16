@@ -58,7 +58,7 @@ function App() {
   return (
     <BrowserRouter>
       <Nav width={width} />
-      <Footer tweet={recentTweet.text} />
+      <Footer tweet={recentTweet.text} width={width} />
       <Routes>
         <Route
           path="/"

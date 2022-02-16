@@ -1,7 +1,8 @@
 import { Link } from "react-scroll";
 import { motion } from "framer-motion";
 import "./styles.css";
-function Footer({ tweet }) {
+function Footer({ tweet, width }) {
+  console.log(-width / 2);
   return (
     <footer>
       <Link activeClass={"active"} to="News" smooth={true} duration={1000}>
@@ -12,12 +13,12 @@ function Footer({ tweet }) {
           </section>
           {tweet && (
             <motion.p
-              initial={{ x: -500 }}
-              animate={{ x: 2000 }}
+              initial={{ x: -width }}
+              animate={{ x: width }}
               transition={{
                 repeat: Infinity,
                 repeatType: "loop",
-                duration: 20,
+                duration: 15,
                 ease: "linear",
               }}
             >
