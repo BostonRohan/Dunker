@@ -1,0 +1,14 @@
+.page {
+  color: var(--text-color-primary);
+  padding: 5em;
+}
+.tweet {
+  margin: 0 auto;
+  display: block;
+  padding: 2rem;
+}
+@media screen and (max-width: 37.5em) {
+  .page {
+    padding: 0;
+  }
+}

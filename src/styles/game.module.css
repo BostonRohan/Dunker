@@ -1,0 +1,32 @@
+.container {
+  min-height: 20em;
+  flex: 33.33%;
+  max-width: 95%;
+  cursor: pointer;
+}
+.content {
+  max-width: 85%;
+  height: 100%;
+  display: flex;
+  gap: 3em;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 0 auto;
+}
+.content img {
+  width: 6.25em;
+}
+.active {
+  min-width: 95%;
+  min-height: 50rem;
+}
+@media screen and (max-width: 37.5em) {
+  .content img {
+    width: 4em;
+  }
+  .container {
+    margin: 0 auto;
+    min-width: 95%;
+  }
+}

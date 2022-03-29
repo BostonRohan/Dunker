@@ -1,0 +1,42 @@
+.nav {
+  position: fixed;
+  min-width: 100%;
+  z-index: 5;
+}
+.nav ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 1em;
+  gap: 1em;
+  color: var(--text-color-primary);
+  font-family: var(--font-primary);
+  font-size: 1.5rem;
+}
+.nav li {
+  cursor: pointer;
+}
+.hamburger-react {
+  margin: 1.5rem;
+  color: var(--text-color-primary);
+}
+.active {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  z-index: 2;
+  background-color: var(--color-primary);
+}
+.active ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  gap: 2em;
+  font-size: 3rem;
+  z-index: 2;
+  list-style-type: none;
+  color: var(--text-color-primary);
+  font-family: var(--font-primary);
+}

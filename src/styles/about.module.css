@@ -1,0 +1,36 @@
+.page {
+  min-width: 100%;
+  height: auto;
+  color: var(--text-color-primary);
+}
+.container {
+  text-align: center;
+  font-size: 1.2rem;
+  max-width: 95%;
+  margin: 0 auto;
+  padding: 2em;
+}
+.content {
+  display: flex;
+  gap: 2em;
+}
+.content p {
+  max-width: 85%;
+  margin: 0 auto;
+}
+.page .container span {
+  border: 1px solid var(--discord-color);
+  padding: 1em;
+  border-radius: 1em;
+  background-color: var(--discord-color);
+  cursor: pointer;
+}
+.page h1 {
+  font-size: 4rem;
+  text-align: center;
+  margin: 0.5rem;
+}
+.page h3 {
+  padding: 1em;
+  margin: 0.5rem;
+}
