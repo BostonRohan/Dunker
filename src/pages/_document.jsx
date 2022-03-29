@@ -4,9 +4,9 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
-        <meta charset="utf-8" />
+        <meta charSet="utf-8" />
         <meta
-          http-equiv="Content-Security-Policy"
+          httpEquiv="Content-Security-Policy"
           content="upgrade-insecure-requests"
         />
         <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
