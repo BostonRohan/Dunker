@@ -93,15 +93,15 @@ function Players({ allPlayers, width }) {
                     onClick={() => handleSelect(player.id, name, imageID)}
                   >
                     <td>
-                      {width > 600 && imageID && (
-                        <img
-                          src={`https://ak-static.cms.nba.com/wp-content/uploads/headshots/nba/latest/260x190/${imageID}.png`}
-                          alt={name}
-                        />
-                      )}
-                      {width > 600 && !imageID && (
-                        <i className="bi bi-person" />
-                      )}
+                      {width > 600 &&
+                        (imageID ? (
+                          <img
+                            src={`https://ak-static.cms.nba.com/wp-content/uploads/headshots/nba/latest/260x190/${imageID}.png`}
+                            alt={name}
+                          />
+                        ) : (
+                          <i className={`${styles.avatar} bi bi-person`} />
+                        ))}
                       {width < 600
                         ? `${player.first_name[0]}. ${player.last_name}`
                         : name}

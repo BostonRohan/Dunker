@@ -1,5 +1,6 @@
 import { getPlayerID } from "../../../../utils/getPlayerId";
 import styles from "../../../styles/table.module.css";
+
 function Table({ data, width, team, score, allPlayers }) {
   const type = [
     "PLAYER",
@@ -44,20 +45,19 @@ function Table({ data, width, team, score, allPlayers }) {
           {data.map((player) => {
             const name =
               player.player.first_name + " " + player.player.last_name;
+            const imageID = getPlayerID(allPlayers, name);
             return (
               <tr key={player.id}>
                 <td>
-                  {width > 600 ? (
-                    <img
-                      src={`https://ak-static.cms.nba.com/wp-content/uploads/headshots/nba/latest/260x190/${getPlayerID(
-                        allPlayers,
-                        name
-                      )}.png`}
-                      alt=""
-                    />
-                  ) : (
-                    ""
-                  )}
+                  {width > 600 &&
+                    (imageID ? (
+                      <img
+                        src={`https://ak-static.cms.nba.com/wp-content/uploads/headshots/nba/latest/260x190/${imageID}.png`}
+                        alt={name}
+                      />
+                    ) : (
+                      <i className={`${styles.avatar} bi bi-person`} />
+                    ))}
                   <section>
                     {width < 600
                       ? `${player.player.first_name[0]}. ${player.player.last_name}`
