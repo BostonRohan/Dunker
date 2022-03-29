@@ -23,7 +23,6 @@ function Table({ data, width, team, score, allPlayers }) {
     "PF",
     "MIN",
   ];
-  console.log(width);
   return (
     data && (
       <table className={styles.table}>

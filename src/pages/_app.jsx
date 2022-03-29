@@ -7,11 +7,12 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 import Footer from "../components/view/footer";
 
 function App({ Component, pageProps }) {
-  const [recentTweet, setRecentTweet] = useState("");
+  const [recentTweet, setRecentTweet] = useState({ id: "", text: "" });
   const [width, setWidth] = useState(
     typeof window !== "undefined" ? window.innerWidth : 0
   );
   const [allPlayers, setAllPlayers] = useState([]);
+  const [games, setGames] = useState([]);
 
   const fetchTweet = async () => {
     await axios
@@ -23,19 +24,38 @@ function App({ Component, pageProps }) {
         });
       })
       .catch((err) => {
-        console.log(err);
+        setRecentTweet(null);
       });
   };
   const fetchAllPlayers = useCallback(async () => {
     await axios
       .get(`http://data.nba.net/data/10s/prod/v1/2021/players.json`)
       .then((res) => {
-        setAllPlayers(res.data.league.standard);
+        setAllPlayers({ data: res.data.league.standard });
       })
       .catch((err) => {
-        console.log(err);
+        setAllPlayers(null);
       });
   });
+  const fetchGames = async () => {
+    let today = new Date();
+    let date =
+      today.getFullYear() +
+      "-" +
+      (today.getMonth() + 1) +
+      "-" +
+      today.getDate();
+    await axios
+      .get(
+        `https://www.balldontlie.io/api/v1/games?start_date=${date}&end_date=${date}`
+      )
+      .then((res) => {
+        setGames(res.data.data);
+      })
+      .catch((err) => {
+        setGames(null);
+      });
+  };
 
   const handleResize = useCallback(() => {
     setWidth(window.innerWidth);
@@ -43,6 +63,7 @@ function App({ Component, pageProps }) {
 
   useEffect(() => {
     fetchAllPlayers();
+    fetchGames();
   }, []);
 
   useEffect(() => {
@@ -67,12 +88,13 @@ function App({ Component, pageProps }) {
         <meta name="theme-color" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
-      <Nav width={width} />
+      <Nav width={width} games={games} />
       <Component
         {...pageProps}
         tweetId={recentTweet.id}
         width={width}
         allPlayers={allPlayers}
+        games={games}
       />
       <Footer tweet={recentTweet.text} width={width} />
     </>

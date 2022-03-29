@@ -1,30 +1,7 @@
-import axios from "axios";
-import { useState, useEffect } from "react";
 import Game from "../games/game";
 import styles from "../../styles/games.module.css";
-function Games({ width, allPlayers }) {
-  const [games, setGames] = useState([]);
 
-  let today = new Date();
-  let date =
-    today.getFullYear() + "-" + (today.getMonth() + 1) + "-" + today.getDate();
-
-  const fetchData = async () => {
-    await axios
-      .get(
-        `https://www.balldontlie.io/api/v1/games?start_date=${date}&end_date=${date}`
-      )
-      .then((res) => {
-        setGames(res.data.data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  };
-  useEffect(() => {
-    fetchData();
-  }, []);
-
+function Games({ width, allPlayers, games }) {
   return (
     <>
       <section className={`${styles.page} Games`}>
@@ -49,4 +26,5 @@ function Games({ width, allPlayers }) {
     </>
   );
 }
+
 export default Games;

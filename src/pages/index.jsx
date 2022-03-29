@@ -5,7 +5,7 @@ import About from "../components/view/about";
 import Games from "../components/view/games";
 import News from "../components/view/news";
 
-function Index({ tweetId, width }) {
+function Index({ tweetId, width, games }) {
   const [allPlayers, setAllPlayers] = useState([]);
 
   const fetchAllPlayers = useCallback(async () => {
@@ -27,7 +27,7 @@ function Index({ tweetId, width }) {
     <main>
       <Landing />
       <About />
-      <Games allPlayers={allPlayers} width={width} />
+      <Games games={games} allPlayers={allPlayers} width={width} />
       <News id={tweetId} />
     </main>
   );
