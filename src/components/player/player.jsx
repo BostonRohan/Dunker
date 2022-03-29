@@ -1,3 +1,4 @@
+import styles from "../../styles/player.module.css";
 function Player({ player }) {
   const type = [
     "games played",
@@ -25,10 +26,14 @@ function Player({ player }) {
     player.id !== 0 && (
       <>
         <h1>{player.name}</h1>
-        <img
-          src={`https://ak-static.cms.nba.com/wp-content/uploads/headshots/nba/latest/260x190/${player.imageID}.png`}
-          alt=""
-        />
+        {player.imageID ? (
+          <img
+            src={`https://ak-static.cms.nba.com/wp-content/uploads/headshots/nba/latest/260x190/${player.imageID}.png`}
+            alt={player.name}
+          />
+        ) : (
+          <i className={`${styles.avatar} bi bi-person`} />
+        )}
         <table>
           <tbody>
             {type.map((item, index) => {

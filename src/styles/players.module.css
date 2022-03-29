@@ -31,6 +31,11 @@
   max-width: 50%;
   float: left;
 }
+.page .select i {
+  font-size: 10rem;
+  float: left;
+  margin-left: 3rem;
+}
 .page .select tbody td {
   border-bottom: 1px solid rgba(255, 255, 255, 0.171);
   padding: 5em;

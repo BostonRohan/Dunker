@@ -1,7 +1,7 @@
+import axios from "axios";
 import { useState } from "react";
 import { getPlayerID } from "../../utils/getPlayerId";
 import Player from "../components/player/player";
-import axios from "axios";
 import styles from "../styles/players.module.css";
 
 function Players({ allPlayers, width }) {
@@ -11,10 +11,10 @@ function Players({ allPlayers, width }) {
   const [input, setInput] = useState("");
   const [result, setResult] = useState([]);
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     //If there is not a first and/or second player fetch the api, when the user clicks submit
     if (firstPlayer.id === 0 || secondPlayer.id === 0) {
-      axios
+      await axios
         .get(`https://www.balldontlie.io/api/v1/players?search=${input}`)
         .then((res) => {
           setResult(res.data.data);
@@ -35,8 +35,8 @@ function Players({ allPlayers, width }) {
     }
   };
 
-  const handleSelect = (id, name, imageID) => {
-    axios
+  const handleSelect = async (id, name, imageID) => {
+    await axios
       .get(
         `https://www.balldontlie.io/api/v1/season_averages?player_ids[]=${id}`
       )
@@ -63,6 +63,7 @@ function Players({ allPlayers, width }) {
     //Reset search results
     setResult([]);
   };
+
   return (
     <section className={styles.page}>
       <div className={`${styles.container} container`}>
@@ -85,6 +86,7 @@ function Players({ allPlayers, width }) {
               {result.map((player) => {
                 const name = player.first_name + " " + player.last_name;
                 const imageID = getPlayerID(allPlayers, name);
+
                 return (
                   <tr
                     key={player.id}
@@ -94,8 +96,11 @@ function Players({ allPlayers, width }) {
                       {width > 600 && imageID && (
                         <img
                           src={`https://ak-static.cms.nba.com/wp-content/uploads/headshots/nba/latest/260x190/${imageID}.png`}
-                          alt=""
+                          alt={name}
                         />
+                      )}
+                      {width > 600 && !imageID && (
+                        <i className="bi bi-person" />
                       )}
                       {width < 600
                         ? `${player.first_name[0]}. ${player.last_name}`

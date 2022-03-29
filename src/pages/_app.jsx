@@ -31,7 +31,7 @@ function App({ Component, pageProps }) {
     await axios
       .get(`http://data.nba.net/data/10s/prod/v1/2021/players.json`)
       .then((res) => {
-        setAllPlayers({ data: res.data.league.standard });
+        setAllPlayers(res.data.league.standard);
       })
       .catch((err) => {
         setAllPlayers(null);
