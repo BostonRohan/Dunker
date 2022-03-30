@@ -9,11 +9,11 @@ export default function Document() {
           httpEquiv="Content-Security-Policy"
           content="upgrade-insecure-requests"
         />
-        <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
         <link
           href="https://fonts.googleapis.com/css?family=Teko:600|Work+Sans:500"
           rel="stylesheet"
         />
+        <link rel="shortcut icon" href="/favicon.ico" />
       </Head>
       <body>
         <Main />
