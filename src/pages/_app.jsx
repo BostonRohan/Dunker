@@ -12,7 +12,7 @@ function App({ Component, pageProps }) {
   const [allPlayers, setAllPlayers] = useState([]);
   const [games, setGames] = useState([]);
 
-  const fetchTweet = async () => {
+  const fetchTweet = useCallback(async () => {
     await axios
       .get("http://localhost:5000/")
       .then((res) => {
@@ -24,7 +24,7 @@ function App({ Component, pageProps }) {
       .catch((err) => {
         setRecentTweet(null);
       });
-  };
+  });
   const fetchAllPlayers = useCallback(async () => {
     await axios
       .get(`http://data.nba.net/data/10s/prod/v1/2021/players.json`)
@@ -35,7 +35,7 @@ function App({ Component, pageProps }) {
         setAllPlayers(null);
       });
   });
-  const fetchGames = async () => {
+  const fetchGames = useCallback(async () => {
     let today = new Date();
     let date =
       today.getFullYear() +
@@ -53,7 +53,7 @@ function App({ Component, pageProps }) {
       .catch((err) => {
         setGames(null);
       });
-  };
+  });
 
   const handleResize = useCallback(() => {
     setWidth(window.innerWidth);

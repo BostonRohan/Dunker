@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import { useRouter } from "next/router";
 import axios from "axios";
 import quizzes from "../../../utils/quizzes";
@@ -14,7 +14,7 @@ function Quiz() {
   const page = router.query.name;
   let quizOptions = options[page][question];
 
-  const postQuiz = async () => {
+  const postQuiz = useCallback(async () => {
     await axios
       .post(`http://localhost:5000/quiz/${page}`, { [page]: selected })
       .then((res) => {
@@ -24,7 +24,7 @@ function Quiz() {
         const { message } = err.message;
         setError(message);
       });
-  };
+  });
 
   const handleClick = (i) => {
     setSelected([...selected, i]);
