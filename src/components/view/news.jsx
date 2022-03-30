@@ -1,8 +1,11 @@
+import TweetEmbed from "react-tweet-embed";
 import styles from "../../styles/news.module.css";
+
 function News({ id }) {
   return (
     <section className={`${styles.page} News`}>
-      <div className="container">
+      <div>
+        {id && <TweetEmbed tweetId={id} options={{ theme: "dark" }} />}
         <blockquote className={styles.tweet}>
           &mdash; Adrian Wojnarowski (@wojespn){" "}
           <a

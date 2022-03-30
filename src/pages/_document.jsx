@@ -14,12 +14,6 @@ export default function Document() {
           href="https://fonts.googleapis.com/css?family=Teko:600|Work+Sans:500"
           rel="stylesheet"
         />
-        {/* <script
-          async
-          src="https://platform.twitter.com/widgets.js"
-          charset="utf-8"
-        ></script>
-        <meta name="twitter:widgets:theme" content="dark" /> */}
       </Head>
       <body>
         <Main />
