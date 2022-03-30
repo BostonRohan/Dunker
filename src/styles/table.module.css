@@ -20,6 +20,9 @@
 .table img {
   width: 30%;
 }
+.table i {
+  font-size: 3rem;
+}
 .table thead h1 {
   font-size: 2rem;
 }
