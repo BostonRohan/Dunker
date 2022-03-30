@@ -36,6 +36,7 @@ Dunker is an application for people who love basketball and love to stay updated
 - bootstrap-icons: ^1.7.2
 - hamburger-react: ^2.4.1
 - framer-motion: ^6.2.6
+- react-tweet-embed: ^2.0.0
 
 ## Public API's Used
 
