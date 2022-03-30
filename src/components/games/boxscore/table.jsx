@@ -26,6 +26,9 @@ function Table({ data, width, team, score, allPlayers }) {
   ];
   return (
     data &&
+    width &&
+    team &&
+    score &&
     allPlayers && (
       <table className={styles.table}>
         <thead>

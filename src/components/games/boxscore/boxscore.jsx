@@ -53,45 +53,41 @@ function BoxScore({
     fetchData();
   }, []);
   return (
-    index &&
-    players.home &&
-    players.visitor && (
-      <div className={styles.boxscore}>
-        <h1>Leading Scorers:</h1>
-        {players.home.length > 1 &&
-          players.visitor.length > 1 &&
-          index !== undefined && (
-            <div className={styles.row}>
-              <LeadingPlayer
-                index={index[0]}
-                players={players.home}
-                allPlayers={allPlayers}
-                width={width}
-              />
-              <LeadingPlayer
-                index={index[1]}
-                players={players.visitor}
-                allPlayers={allPlayers}
-                width={width}
-              />
-            </div>
-          )}
-        <Table
-          data={players.home}
-          allPlayers={allPlayers}
-          width={width}
-          team={home}
-          score={homeScore}
-        />
-        <Table
-          data={players.visitor}
-          allPlayers={allPlayers}
-          width={width}
-          team={visitor}
-          score={visitorScore}
-        />
-      </div>
-    )
+    <div className={styles.boxscore}>
+      <h1>Leading Scorers:</h1>
+      {players.home.length > 1 &&
+        players.visitor.length > 1 &&
+        index !== undefined && (
+          <div className={styles.row}>
+            <LeadingPlayer
+              index={index[0]}
+              players={players.home}
+              allPlayers={allPlayers}
+              width={width}
+            />
+            <LeadingPlayer
+              index={index[1]}
+              players={players.visitor}
+              allPlayers={allPlayers}
+              width={width}
+            />
+          </div>
+        )}
+      <Table
+        data={players.home}
+        allPlayers={allPlayers}
+        width={width}
+        team={home}
+        score={homeScore}
+      />
+      <Table
+        data={players.visitor}
+        allPlayers={allPlayers}
+        width={width}
+        team={visitor}
+        score={visitorScore}
+      />
+    </div>
   );
 }
 export default BoxScore;
