@@ -1,24 +1,24 @@
 .nav {
-  position: fixed;
-  min-width: 100%;
+  position: sticky !important;
+  width: 100%;
   z-index: 5;
+  display: flex;
+  align-items: center;
+  top: 0;
+  position: -webkit-sticky !important;
 }
 .nav ul {
   list-style-type: none;
   display: flex;
-  justify-content: flex-end;
-  padding-right: 1em;
   gap: 1em;
   color: var(--text-color-primary);
   font-family: var(--font-primary);
   font-size: 1.5rem;
+  margin-left: auto;
+  margin-right: 1em;
 }
 .nav li {
   cursor: pointer;
-}
-.hamburger-react {
-  margin: 1.5rem;
-  color: var(--text-color-primary);
 }
 .active {
   height: 100%;
@@ -30,7 +30,7 @@
 .active ul {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   height: 100%;
   gap: 2em;
