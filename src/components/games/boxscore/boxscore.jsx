@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import Table from "./table";
 import LeadingPlayer from "./leadingplayer/leadingPlayer";
 import styles from "../../../styles/boxscore.module.css";
@@ -16,7 +16,7 @@ function BoxScore({
   const [index, setIndex] = useState([]);
   const [players, setPlayers] = useState({ home: [], visitor: [] });
 
-  const fetchData = async () => {
+  const fetchData = useCallback(async () => {
     await axios
       .get(`https://www.balldontlie.io/api/v1/stats?game_ids[]=${id}`)
       .then((res) => {
@@ -48,7 +48,7 @@ function BoxScore({
       .catch((err) => {
         console.log(err);
       });
-  };
+  }, [id]);
   useEffect(() => {
     fetchData();
   }, []);

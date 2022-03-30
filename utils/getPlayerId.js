@@ -12,8 +12,11 @@ export const getPlayerID = (allPlayers, player) => {
         allPlayers[i].firstName.replace(/\W/g, "") ===
           firstName.replace(/\W/g, "")) ||
       (firstName.includes(allPlayers[i].firstName) &&
-        allPlayers[i].lastName.replace(/\W/g, "") ===
-          lastName.replace(/\W/g, ""))
+        allPlayers[i].lastName.replace(/\W/g, "") &&
+        allPlayers[i].lastName
+          .replace(/\W/g, "")
+          .replace(/\W/g, "")
+          .includes(lastName.replace(/\W/g, "")))
     ) {
       return allPlayers[i].personId;
     }

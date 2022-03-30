@@ -25,7 +25,8 @@ function Table({ data, width, team, score, allPlayers }) {
     "MIN",
   ];
   return (
-    data && (
+    data &&
+    allPlayers && (
       <table className={styles.table}>
         <thead>
           <tr>
