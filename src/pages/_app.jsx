@@ -8,9 +8,7 @@ import Footer from "../components/view/footer";
 
 function App({ Component, pageProps }) {
   const [recentTweet, setRecentTweet] = useState({ id: "", text: "" });
-  const [width, setWidth] = useState(
-    typeof window !== "undefined" ? window.innerWidth : 0
-  );
+  const [width, setWidth] = useState(0);
   const [allPlayers, setAllPlayers] = useState([]);
   const [games, setGames] = useState([]);
 
@@ -64,6 +62,7 @@ function App({ Component, pageProps }) {
   useEffect(() => {
     fetchAllPlayers();
     fetchGames();
+    setWidth(window.innerWidth);
   }, []);
 
   useEffect(() => {
@@ -73,7 +72,7 @@ function App({ Component, pageProps }) {
   useEffect(() => {
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
-  });
+  }, []);
 
   return (
     <>
