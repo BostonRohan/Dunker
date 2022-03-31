@@ -1,6 +1,10 @@
 .page {
   color: var(--text-color-primary);
 }
+.page .input {
+  width: 95%;
+  margin: 0 auto;
+}
 .page input[type="text"] {
   padding: 0.5em;
   margin: 1em;

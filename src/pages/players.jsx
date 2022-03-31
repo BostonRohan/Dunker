@@ -10,6 +10,7 @@ function Players({ allPlayers, width }) {
   const [secondPlayer, setSecondPlayer] = useState(defaultState);
   const [input, setInput] = useState("");
   const [result, setResult] = useState([]);
+  const [error, setError] = useState(null);
 
   const handleSubmit = useCallback(async () => {
     //If there is not a first and/or second player fetch the api, when the user clicks submit
@@ -21,7 +22,9 @@ function Players({ allPlayers, width }) {
           setInput("");
         })
         .catch((err) => {
-          console.log(err);
+          setError(
+            "An error occurred while finding this player, please try again."
+          );
         });
     } else {
       return;
@@ -60,7 +63,12 @@ function Players({ allPlayers, width }) {
         firstPlayer.id === 0
           ? setFirstPlayer(newState)
           : setSecondPlayer(newState);
-      });
+      })
+      .catch((err) =>
+        setError(
+          "An error occurred while finding this player, please try again."
+        )
+      );
     //Reset search results
     setResult([]);
   });
@@ -69,14 +77,17 @@ function Players({ allPlayers, width }) {
     <section className={styles.page}>
       <div className={`${styles.container} container`}>
         <section>
-          <p>*Historic players or seasons currently not supported</p>
-          <input
-            type="text"
-            placeholder="Name"
-            value={input || ""}
-            onChange={(e) => setInput(e.target.value)}
-          />
-          <input type="submit" value="Submit" onClick={handleSubmit} />
+          <div className={styles.input}>
+            <p>*Historic players or seasons currently not supported</p>
+            {error && <p>{error}</p>}
+            <input
+              type="text"
+              placeholder="Name"
+              value={input || ""}
+              onChange={(e) => setInput(e.target.value)}
+            />
+            <input type="submit" value="Submit" onClick={handleSubmit} />
+          </div>
           <table className={styles.select}>
             <thead>
               <tr>

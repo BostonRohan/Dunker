@@ -37,17 +37,11 @@ h5 {
   background-color: var(--card-color);
   border-radius: 1em;
 }
-input[type="email"],
-input[type="password"],
-input[type="text"] {
-  padding: 0.5rem 2rem;
-  display: block;
-  margin: 3rem auto;
-}
 input[type="submit"] {
-  padding: 1em 2em;
+  padding: 0.7em 2em;
   margin: 1em auto;
   border-radius: 0.5em;
+  font-family: var(--font-primary);
   background-color: var(--color-primary);
   border-color: var(--color-primary);
   color: var(--text-color-primary);
