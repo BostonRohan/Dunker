@@ -2,6 +2,7 @@
   min-width: 100%;
   height: auto;
   color: var(--text-color-primary);
+  padding: 3em;
 }
 .container {
   text-align: center;

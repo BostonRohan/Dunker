@@ -7,6 +7,33 @@
   gap: 1em;
   flex-wrap: wrap;
 }
+.date {
+  display: flex;
+  justify-content: flex-start;
+  margin-left: 5.5rem;
+  gap: 3rem;
+}
+.date select {
+  width: 50%;
+  min-width: 15ch;
+  max-width: 30ch;
+  border: 1px solid var(--select-border);
+  border-radius: 0.25em;
+  padding: 0.25em 0.5em;
+  font-size: 1.25rem;
+  cursor: pointer;
+  line-height: 1.1;
+  background-color: var(--card-color);
+  color: var(--text-color-primary);
+}
+.wrapper i {
+  color: var(--text-color-primary);
+  font-size: 2rem;
+  cursor: pointer;
+}
+.wrapper i:hover {
+  opacity: 0.8;
+}
 
 @media screen and (max-width: 37.5em) {
   .page {

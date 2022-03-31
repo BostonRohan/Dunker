@@ -26,7 +26,7 @@ function Players({ allPlayers, width }) {
     } else {
       return;
     }
-  }, [firstPlayer, secondPlayer]);
+  });
 
   const handleClick = useCallback((player) => {
     if (player === "first") {
