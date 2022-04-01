@@ -6,10 +6,8 @@
 .page div {
   margin: 0 auto;
 }
-.tweet {
-  margin: 0 auto;
-  display: block;
-  padding: 2rem;
+.page a:hover {
+  text-decoration: underline;
 }
 @media screen and (max-width: 37.5em) {
   .page {

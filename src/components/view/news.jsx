@@ -6,14 +6,13 @@ function News({ id }) {
     <section className={`${styles.page} News`}>
       <div>
         {id && <TweetEmbed tweetId={id} options={{ theme: "dark" }} />}
-        <blockquote className={styles.tweet}>
+        <a
+          href={`https://twitter.com/wojespn/status/${id}?ref_src=twsrc%5Etfw`}
+          target="_blank"
+          rel="noreferrer"
+        >
           &mdash; Adrian Wojnarowski (@wojespn){" "}
-          <a
-            href={`https://twitter.com/wojespn/status/${id}?ref_src=twsrc%5Etfw`}
-          >
-            May 5, 2014
-          </a>
-        </blockquote>{" "}
+        </a>
       </div>
     </section>
   );
