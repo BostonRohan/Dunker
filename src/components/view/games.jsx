@@ -1,55 +1,35 @@
-import { useState, useCallback, useEffect, useMemo } from "react";
-import format from "../../../utils/formatDate";
+import { useState, useCallback } from "react";
 import Game from "../games/game";
 import sort from "../../../utils/sortByTime";
 import Modal from "../games/modal/modal";
-import week from "../../../utils/week";
+import format from "../../../utils/formatDate";
 import styles from "../../styles/games.module.css";
 
 function Games({ width, allPlayers, games, fetchGames }) {
   const [open, setOpen] = useState(false);
-  const [error, setError] = useState(null);
   const [clicked, setClicked] = useState("");
-  const weekday = [
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
-  ];
-  const handleClick = useCallback(
-    async (clickedDate) => {
-      setClicked(clickedDate);
-      clickedDate = clickedDate.split(" ");
-      clickedDate.shift();
-      clickedDate = clickedDate.join(" ");
-      await fetchGames(clickedDate);
-    },
-    [games]
-  );
+
+  const setClickedDate = useCallback((date) => {
+    if (format(new Date()) === date) setClicked("");
+    else setClicked(date);
+  });
+
+  const close = useCallback(() => {
+    setOpen(false);
+  }, [open]);
 
   return (
     <div className={styles.wrapper}>
+      {open && (
+        <Modal
+          fetchGames={fetchGames}
+          close={close}
+          setClickedDate={setClickedDate}
+        />
+      )}
       <section className={styles.date}>
         <i className="bi bi-calendar-event" onClick={() => setOpen(true)} />
-        <select
-          id="day"
-          className={styles.select}
-          onChange={(e) => handleClick(e.target.value)}
-          value={"" || clicked}
-        >
-          {week(new Date()).map((day) => {
-            return (
-              <option key={day.valueOf()}>
-                {new Date().getDay() === day.getDay()
-                  ? "Today"
-                  : weekday[day.getDay()] + " " + format(day)}
-              </option>
-            );
-          })}
-        </select>
+        <h2>{clicked}</h2>
       </section>
       <section className={`${styles.page} Games`}>
         {!games && (
