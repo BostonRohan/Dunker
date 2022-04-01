@@ -3,24 +3,18 @@ import styles from "../../../../styles/leadingPlayer.module.css";
 
 function LeadingPlayer({ index, players, allPlayers, width }) {
   const statTypes = ["pts", "ast", "reb"];
+  const fullName =
+    players[index].player.first_name + " " + players[index].player.last_name;
   return (
     <div className={styles.column}>
       <img
         src={`https://ak-static.cms.nba.com/wp-content/uploads/headshots/nba/latest/260x190/${getPlayerID(
           allPlayers,
-          players[index].player.first_name +
-            " " +
-            players[index].player.last_name
+          fullName
         )}.png`}
-        alt=""
+        alt={fullName}
       />
-      <h3>
-        {width < 600
-          ? players[index].player.first_name
-          : players[index].player.first_name +
-            " " +
-            players[index].player.last_name}
-      </h3>
+      <h3>{width < 600 ? players[index].player.first_name : fullName}</h3>
       {statTypes.map((type, statIndex) => {
         return (
           <section key={statIndex} className={styles.stats}>

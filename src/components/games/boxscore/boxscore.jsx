@@ -15,6 +15,7 @@ function BoxScore({
   //First position, home, second position visitor.
   const [index, setIndex] = useState([]);
   const [players, setPlayers] = useState({ home: [], visitor: [] });
+  const [error, setError] = useState(null);
 
   const fetchData = useCallback(async () => {
     await axios
@@ -46,7 +47,9 @@ function BoxScore({
         });
       })
       .catch((err) => {
-        console.log(err);
+        setError(
+          "There was an error finding the leading scorers, please try again."
+        );
       });
   }, [id]);
   useEffect(() => {
@@ -55,6 +58,7 @@ function BoxScore({
   return (
     <div className={styles.boxscore}>
       <h1>Leading Scorers:</h1>
+      {error && <p>{error}</p>}
       {players.home.length > 1 &&
         players.visitor.length > 1 &&
         index !== undefined && (
