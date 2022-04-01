@@ -32,12 +32,12 @@ Dunker is an application for people who love basketball and love to stay updated
 - react: ^17.0.2
 - axios: ^0.24.0
 - react-scroll: ^1.8.4
-- react-router-dom: ^6.2.1
 - bootstrap-icons: ^1.7.2
 - hamburger-react: ^2.4.1
 - framer-motion: ^6.2.6
 - react-tweet-embed: ^2.0.0
 - react-calendar: ^3.7.0
+- next: ^12.1.1
 
 ## Public API's Used
 
@@ -48,9 +48,9 @@ Dunker is an application for people who love basketball and love to stay updated
 To run this project locally, install it using npm:
 
 ```
-$ cd ../Dunker/client
+$ cd ./dunker
 $ npm install
-$ npm start
+$ npm run dev
 ```
 
 ## Extra Information
