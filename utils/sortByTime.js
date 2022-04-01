@@ -14,7 +14,7 @@ const sort = (games) => {
   });
   //if there are games that have started
   if (qtrs) {
-    qtrs = qtrs.sort((a, b) => +a.status[0] - +b.status[0]);
+    qtrs = qtrs.sort((a, b) => +b.status[0] - +a.status[0]);
     return [...qtrs, ...regStatus];
   } else return regStatus;
 };
