@@ -14,7 +14,7 @@ function App({ Component, pageProps }) {
   const [games, setGames] = useState([]);
   const [gamesToday, setGamesToday] = useState([]);
 
-  const fetchTweet = useCallback(async () => {
+  const fetchTweet = async () => {
     await axios
       .get("https://dunkerio.herokuapp.com/")
       .then((res) => {
@@ -26,8 +26,8 @@ function App({ Component, pageProps }) {
       .catch((err) => {
         setRecentTweet(null);
       });
-  });
-  const fetchAllPlayers = useCallback(async () => {
+  };
+  const fetchAllPlayers = async () => {
     await axios
       .get(`http://data.nba.net/data/10s/prod/v1/2021/players.json`)
       .then((res) => {
@@ -36,7 +36,7 @@ function App({ Component, pageProps }) {
       .catch((err) => {
         setAllPlayers(null);
       });
-  });
+  };
   const fetchGames = async (inputDate) => {
     const today = format(new Date());
     await axios
@@ -70,7 +70,7 @@ function App({ Component, pageProps }) {
   useEffect(() => {
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
-  }, []);
+  }, [handleResize]);
 
   return (
     <>

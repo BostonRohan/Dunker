@@ -1,4 +1,5 @@
-import { useState, useCallback } from "react";
+import { useState } from "react";
+import options from "../../../utils/options";
 import { useRouter } from "next/router";
 import axios from "axios";
 import quizzes from "../../../utils/quizzes";
@@ -14,7 +15,7 @@ function Quiz() {
   const page = router.query.name;
   let quizOptions = options[page][question];
 
-  const postQuiz = useCallback(async () => {
+  const postQuiz = async () => {
     await axios
       .post(`https://dunkerio.herokuapp.com/quiz/${page}`, { [page]: selected })
       .then((res) => {
@@ -24,7 +25,7 @@ function Quiz() {
         const { message } = err.message;
         setError(message);
       });
-  });
+  };
 
   const handleClick = (i) => {
     setSelected([...selected, i]);

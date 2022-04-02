@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useState, useCallback } from "react";
+import { useState } from "react";
 import { getPlayerID } from "../../utils/getPlayerId";
 import Player from "../components/player/player";
 import styles from "../styles/players.module.css";
@@ -12,7 +12,7 @@ function Players({ allPlayers, width }) {
   const [result, setResult] = useState([]);
   const [error, setError] = useState(null);
 
-  const handleSubmit = useCallback(async () => {
+  const handleSubmit = async () => {
     //If there is not a first and/or second player fetch the api, when the user clicks submit
     if (firstPlayer.id === 0 || secondPlayer.id === 0) {
       await axios
@@ -29,17 +29,17 @@ function Players({ allPlayers, width }) {
     } else {
       return;
     }
-  });
+  };
 
-  const handleClick = useCallback((player) => {
+  const handleClick = (player) => {
     if (player === "first") {
       setFirstPlayer(defaultState);
     } else {
       setSecondPlayer(defaultState);
     }
-  });
+  };
 
-  const handleSelect = useCallback(async (id, name, imageID) => {
+  const handleSelect = async (id, name, imageID) => {
     await axios
       .get(
         `https://www.balldontlie.io/api/v1/season_averages?player_ids[]=${id}`
@@ -71,7 +71,7 @@ function Players({ allPlayers, width }) {
       );
     //Reset search results
     setResult([]);
-  });
+  };
 
   return (
     <section className={styles.page}>

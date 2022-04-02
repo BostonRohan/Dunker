@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect } from "react";
 import Table from "./table";
 import LeadingPlayer from "./leadingplayer/leadingPlayer";
 import styles from "../../../styles/boxscore.module.css";
@@ -17,7 +17,7 @@ function BoxScore({
   const [players, setPlayers] = useState({ home: [], visitor: [] });
   const [error, setError] = useState(null);
 
-  const fetchData = useCallback(async () => {
+  const fetchData = async () => {
     await axios
       .get(`https://www.balldontlie.io/api/v1/stats?game_ids[]=${id}`)
       .then((res) => {
@@ -51,7 +51,7 @@ function BoxScore({
           "There was an error finding the leading scorers, please try again."
         );
       });
-  }, [id]);
+  };
   useEffect(() => {
     fetchData();
   }, []);
