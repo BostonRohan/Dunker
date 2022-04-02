@@ -1,0 +1,28 @@
+.table {
+  width: 100%;
+  padding-left: 1em;
+}
+.table tr {
+  border: 1px solid white;
+}
+.table th {
+  padding: 0.25em;
+  text-align: center;
+}
+.table td {
+  padding: 0.25em;
+  text-align: center;
+}
+.table td span {
+  padding: 0.25em;
+  opacity: 0.7;
+}
+.table img {
+  width: 30%;
+}
+.table i {
+  font-size: 3rem;
+}
+.table thead h1 {
+  font-size: 2rem;
+}

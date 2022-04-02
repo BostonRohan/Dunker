@@ -1,0 +1,35 @@
+.page {
+  color: var(--text-color-primary);
+  height: 100vh;
+}
+.options {
+  min-height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding-top: 5rem;
+}
+.options .container {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 calc(100%-50px);
+  height: 20rem;
+  width: 25rem;
+  margin: 1rem;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+.options .container img {
+  width: 4rem;
+}
+@media screen and (max-width: 37.5em) {
+  .options {
+    padding-top: 10rem;
+  }
+  .options .container img {
+    width: 4rem;
+  }
+}

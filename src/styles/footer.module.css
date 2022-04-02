@@ -1,0 +1,25 @@
+.footer {
+  position: fixed !important;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  color: var(--text-color-primary);
+  cursor: pointer;
+}
+.footer section {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.5rem;
+  margin-left: 0.5rem;
+}
+.footer p {
+  white-space: nowrap;
+  display: inline-block;
+  margin: 0;
+}
+.footer h3 {
+  margin: 0;
+}
+.footer section i {
+  color: var(--twitter-color);
+}
