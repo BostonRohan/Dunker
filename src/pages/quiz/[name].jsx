@@ -1,5 +1,4 @@
 import { useState } from "react";
-import options from "../../../utils/options";
 import { useRouter } from "next/router";
 import axios from "axios";
 import quizzes from "../../../utils/quizzes";
@@ -13,7 +12,7 @@ function Quiz() {
   const [error, setError] = useState("");
   const router = useRouter();
   const page = router.query.name;
-  let quizOptions = options[page][question];
+  let quizOptions = options[page][0];
 
   const postQuiz = async () => {
     await axios
