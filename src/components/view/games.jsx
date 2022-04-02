@@ -1,4 +1,4 @@
-import { useState, useCallback } from "react";
+import { useState } from "react";
 import Game from "../games/game";
 import sort from "../../../utils/sortByTime";
 import Modal from "../games/modal/modal";
@@ -9,14 +9,14 @@ function Games({ width, allPlayers, games, fetchGames }) {
   const [open, setOpen] = useState(false);
   const [clicked, setClicked] = useState("");
 
-  const setClickedDate = useCallback((date) => {
+  const setClickedDate = (date) => {
     if (format(new Date()) === date) setClicked("");
     else setClicked(date);
-  });
+  };
 
-  const close = useCallback(() => {
+  const close = () => {
     setOpen(false);
-  }, [open]);
+  };
 
   return (
     <div className={styles.wrapper}>
