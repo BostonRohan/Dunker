@@ -6,9 +6,11 @@
 
 [<img src="/public/screenshots/games.png">](https://Dunker.vercel.app)
 
+[<img src="/public/screenshots/leading-scorers.png">](https://Dunker.vercel.app)
+
 [<img src="/public/screenshots/boxscore.png">](https://Dunker.vercel.app)
 
-[<img src="/public/screenshots/player.png">](https://Dunker.vercel.app)
+[<img src="/public/screenshots/players.png">](https://Dunker.vercel.app)
 
 [<img src="/public/screenshots/question.png">](https://Dunker.vercel.app)
 
