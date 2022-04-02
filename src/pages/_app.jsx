@@ -16,7 +16,7 @@ function App({ Component, pageProps }) {
 
   const fetchTweet = useCallback(async () => {
     await axios
-      .get("http://localhost:5000/")
+      .get("https://dunkerio.herokuapp.com/")
       .then((res) => {
         setRecentTweet({
           id: res.data.meta.newest_id,

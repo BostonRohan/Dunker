@@ -16,7 +16,7 @@ function Quiz() {
 
   const postQuiz = useCallback(async () => {
     await axios
-      .post(`http://localhost:5000/quiz/${page}`, { [page]: selected })
+      .post(`https://dunkerio.herokuapp.com/quiz/${page}`, { [page]: selected })
       .then((res) => {
         setScore(parseInt(res.data));
       })
