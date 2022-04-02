@@ -24,7 +24,7 @@ function App({ Component, pageProps }) {
         });
       })
       .catch((err) => {
-        setRecentTweet(null);
+        setRecentTweet("");
       });
   };
   const fetchAllPlayers = async () => {
