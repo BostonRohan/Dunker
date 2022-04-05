@@ -31,7 +31,7 @@ function Nav({ width, games }) {
 
   return (
     <div className={open ? styles.active : styles.nav}>
-      <Games games={games} open={open} close={close} />
+      {!!games.length && <Games games={games} open={open} close={close} />}
       {width > 750 ? (
         <>
           <ul>
