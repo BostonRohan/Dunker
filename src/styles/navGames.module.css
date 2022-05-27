@@ -8,7 +8,7 @@
   border-radius: 1em;
   white-space: nowrap;
   overflow-x: scroll;
-  width: 75%;
+  max-width: 75%;
   cursor: pointer;
 }
 .content {
