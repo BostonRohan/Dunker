@@ -1,9 +1,0 @@
-.modal {
-  height: 100vh !important;
-  position: absolute;
-  width: 100%;
-  margin: 0 auto;
-  background-color: #181818a6;
-  display: flex;
-  justify-content: center;
-}
